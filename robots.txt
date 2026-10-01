@@ -1,1 +1,4 @@
+User-agent: *
+Allow: /
 
+Sitemap: https://dantesideas.github.io/pro-pioneers-tech/sitemap.xml
