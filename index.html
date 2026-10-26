@@ -7,14 +7,33 @@
 
 <title>Pro-Pioneers Technologies | ICT & Technology Solutions</title>
 
-<meta name="description" content="Pro-Pioneers Technologies provides ICT, networking, Wi-Fi, fiber optic, CCTV, website development and electrical technology solutions.">
+<meta name="description" content="Pro-Pioneers Technologies provides ICT support, networking, Wi-Fi, fiber optic, CCTV, website development and electrical technology solutions in Kenya.">
+
+<meta name="theme-color" content="#071a35">
+
+<meta property="og:title" content="Pro-Pioneers Technologies | ICT & Technology Solutions">
+<meta property="og:description" content="ICT, networking, Wi-Fi, fiber optic, CCTV, website development and electrical technology solutions in Kenya.">
+<meta property="og:url" content="https://dantesideas.github.io/pro-pioneers-tech/">
+<meta property="og:type" content="website">
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 
-<style>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "LocalBusiness",
+  "name": "Pro-Pioneers Technologies",
+  "description": "ICT support, networking, Wi-Fi, fiber optic, CCTV, website development and electrical technology solutions.",
+  "telephone": "+254735505021",
+  "email": "propioneerstechnologies@gmail.com",
+  "areaServed": "Kenya",
+  "url": "https://dantesideas.github.io/pro-pioneers-tech/"
+}
+</script>
 
+<style>
 * {
     margin: 0;
     padding: 0;
@@ -23,6 +42,7 @@
 
 html {
     scroll-behavior: smooth;
+    scroll-padding-top: 85px;
 }
 
 body {
@@ -32,7 +52,9 @@ body {
     line-height: 1.6;
 }
 
-/* HEADER */
+a {
+    overflow-wrap: anywhere;
+}
 
 header {
     background: #071a35;
@@ -50,6 +72,7 @@ header {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    gap: 15px;
 }
 
 .logo {
@@ -77,8 +100,6 @@ nav a {
 nav a:hover {
     color: #22a6f2;
 }
-
-/* HERO */
 
 .hero {
     background:
@@ -126,12 +147,15 @@ nav a:hover {
     border-radius: 8px;
     text-decoration: none;
     font-weight: 700;
+    text-align: center;
     transition: 0.2s;
+    cursor: pointer;
 }
 
 .btn-primary {
     background: #22a6f2;
     color: white;
+    border: 1px solid #22a6f2;
 }
 
 .btn-primary:hover {
@@ -148,8 +172,6 @@ nav a:hover {
     background: white;
     color: #071a35;
 }
-
-/* HERO CARD */
 
 .hero-card {
     background: rgba(255,255,255,0.08);
@@ -169,8 +191,6 @@ nav a:hover {
     border-bottom: 1px solid rgba(255,255,255,0.12);
     color: #d7e4f2;
 }
-
-/* GENERAL */
 
 section {
     padding: 75px 20px;
@@ -198,9 +218,8 @@ section {
     margin: auto;
 }
 
-/* SERVICES */
-
-.services {
+.services,
+.contact {
     background: white;
 }
 
@@ -245,8 +264,6 @@ section {
     font-size: 14px;
 }
 
-/* ABOUT */
-
 .about-grid {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -280,8 +297,6 @@ section {
     font-weight: 800;
     margin-right: 10px;
 }
-
-/* PROCESS */
 
 .process {
     background: #071a35;
@@ -328,12 +343,6 @@ section {
     font-size: 14px;
 }
 
-/* CONTACT */
-
-.contact {
-    background: white;
-}
-
 .contact-grid {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -347,16 +356,23 @@ section {
 }
 
 .contact-item {
-    margin-bottom: 20px;
+    margin-bottom: 24px;
 }
 
 .contact-item strong {
     display: block;
     color: #071a35;
+    margin-bottom: 5px;
 }
 
+.contact-item p,
 .contact-item span {
     color: #687386;
+}
+
+.contact-item a:not(.btn) {
+    color: #0969b8;
+    font-weight: 600;
 }
 
 .contact-box {
@@ -376,7 +392,11 @@ section {
     margin-bottom: 25px;
 }
 
-/* FOOTER */
+.contact-actions {
+    display: flex;
+    gap: 12px;
+    flex-wrap: wrap;
+}
 
 footer {
     background: #041126;
@@ -390,32 +410,52 @@ footer strong {
     color: white;
 }
 
-/* WHATSAPP */
+/* Floating contact buttons */
 
-.whatsapp {
+.floating-contact {
     position: fixed;
     right: 20px;
-    bottom: 20px;
     width: 58px;
     height: 58px;
-    background: #25D366;
-    color: white;
     border-radius: 50%;
     display: flex;
     align-items: center;
     justify-content: center;
     text-decoration: none;
-    font-size: 28px;
+    color: white;
     box-shadow: 0 5px 20px rgba(0,0,0,0.25);
     z-index: 2000;
+    transition: transform 0.2s;
 }
 
-/* MOBILE */
+.floating-contact:hover {
+    transform: scale(1.07);
+}
+
+.floating-call {
+    bottom: 92px;
+    background: #0d6efd;
+    font-size: 27px;
+}
+
+.whatsapp {
+    bottom: 20px;
+    background: #25D366;
+}
+
+.floating-contact svg {
+    display: block;
+}
+
+/* Mobile layout */
 
 @media (max-width: 850px) {
-
     nav {
-        display: none;
+        gap: 12px;
+    }
+
+    nav a {
+        font-size: 12px;
     }
 
     .hero-content,
@@ -435,14 +475,26 @@ footer strong {
     .hero {
         padding: 65px 20px 75px;
     }
+
+    .hero-content {
+        gap: 35px;
+    }
 }
 
 @media (max-width: 550px) {
-
-    .service-grid {
-        grid-template-columns: 1fr;
+    .navbar {
+        padding: 14px 16px;
     }
 
+    .logo {
+        font-size: 17px;
+    }
+
+    nav {
+        display: none;
+    }
+
+    .service-grid,
     .process-grid {
         grid-template-columns: 1fr;
     }
@@ -463,29 +515,32 @@ footer strong {
     .about h2 {
         font-size: 29px;
     }
-}
 
+    .contact-card,
+    .contact-box {
+        padding: 24px;
+    }
+
+    .buttons .btn,
+    .contact-actions .btn {
+        flex: 1 1 100%;
+    }
+
+    .floating-contact {
+        right: 16px;
+        width: 54px;
+        height: 54px;
+    }
+
+    .floating-call {
+        bottom: 84px;
+    }
+
+    .whatsapp {
+        bottom: 18px;
+    }
+}
 </style>
-   <!-- Open Graph (for WhatsApp, Facebook, LinkedIn sharing) -->
-<meta property="og:title" content="Pro-Pioneers Technologies | ICT & Technology Solutions">
-<meta property="og:description" content="ICT, networking, Wi-Fi, fiber optic, CCTV, website development and electrical technology solutions in Kenya.">
-<meta property="og:url" content="https://dantesideas.github.io/pro-pioneers-tech/">
-<meta property="og:type" content="website">
-
-<!-- Local Business Structured Data (very important for a Kenyan service business) -->
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "LocalBusiness",
-  "name": "Pro-Pioneers Technologies",
-  "description": "ICT, networking, Wi-Fi, fiber optic, CCTV, website development and electrical technology solutions.",
-  "telephone": "+254735505021",
-  "email": "propioneerstechnologies@gmail.com",
-  "areaServed": "Kenya",
-  "url": "https://dantesideas.github.io/pro-pioneers-tech/",
-  "priceRange": "$$"
-}
-</script> 
 </head>
 
 <body>
@@ -494,419 +549,345 @@ footer strong {
 
 <header>
     <div class="navbar">
-
         <div class="logo">
             Pro-Pioneers <span>Technologies</span>
         </div>
 
-        <nav>
+        <nav aria-label="Main navigation">
             <a href="#home">Home</a>
             <a href="#services">Services</a>
             <a href="#about">About</a>
             <a href="#contact">Contact</a>
         </nav>
-
     </div>
 </header>
-
 
 <!-- HERO -->
 
 <section class="hero" id="home">
-
     <div class="hero-content">
 
         <div>
-
             <h1>
                 Technology that
                 <span>works for you.</span>
             </h1>
 
             <p>
-                Pro-Pioneers Technologies brings the best ICT services and solutions including;
-                computer systems networking,home fiber installations, CCTV Cameras installations & maintenance, website development and
-                electrical installations for homes and business premises.
+                Pro-Pioneers Technologies provides practical ICT and
+                technology solutions, including computer networking,
+                home fiber installations, CCTV camera installation
+                and maintenance, website development, and electrical
+                services for homes and business premises.
             </p>
 
             <div class="buttons">
+                <a class="btn btn-primary" href="tel:+254735505021">
+                    📞 Call Us: 0735 505 021
+                </a>
 
-            
-        <a class="btn btn-primary"
-   href="https://wa.me/254735505021?text=Hello%20Pro-Pioneer%20Technologies%2C%20I%20would%20like%20to%20make%20an%20enquiry."
-   target="_blank" rel="noopener">
-    Chat on WhatsApp
-</a>           
-             
+                <a class="btn btn-outline"
+                   href="https://wa.me/254735505021?text=Hello%20Pro-Pioneers%20Technologies%2C%20I%20would%20like%20to%20make%20an%20enquiry."
+                   target="_blank" rel="noopener">
+                    Chat on WhatsApp
+                </a>
             </div>
-
         </div>
 
-
         <div class="hero-card">
-
             <h3>What We Do</h3>
-
-            <div>📡 Wi-Fi Hotspots installations & Networking</div>
-            <div>🔌Home & Commercial internet via Fiber optics💿</div>
-            <div>📷 CCTV Surveillance Security Cameras</div>
-            <div>🌐 Website Development</div>
-            <div>💻 Smartphone& laptops Softwares ICT Support</div>
-            <div>⚡ Electrical installation Services</div>
-
+            <div>📡 Wi-Fi hotspot installation and networking</div>
+            <div>🔌 Home and commercial fiber internet</div>
+            <div>📷 CCTV surveillance and security cameras</div>
+            <div>🌐 Website development</div>
+            <div>💻 Smartphone and laptop software support</div>
+            <div>⚡ Electrical installation services</div>
         </div>
 
     </div>
-
 </section>
-
 
 <!-- SERVICES -->
 
 <section class="services" id="services">
-
     <div class="container">
 
         <div class="section-title">
-
             <h2>Our Services</h2>
-
             <p>
                 Reliable technology solutions for homes,
                 businesses, institutions and organizations.
             </p>
-
         </div>
-
 
         <div class="service-grid">
 
             <div class="service-card">
-
                 <div class="icon">📡</div>
-
                 <h3>Wi-Fi & Networking</h3>
-
                 <p>
-                    Router setup, Wi-Fi installation and optimization, LAN installation,
-                    network troubleshooting and connectivity solutions.
+                    Router setup, Wi-Fi installation and optimization,
+                    LAN installation, network troubleshooting and
+                    connectivity solutions.
                 </p>
-
             </div>
 
-
             <div class="service-card">
-
                 <div class="icon">🔌</div>
-
                 <h3>Fiber Optics</h3>
-
                 <p>
-                    Home and commercial Optical Fiber installations and support, testing, troubleshooting
-                    and fiber network solutions.
+                    Home and commercial fiber installations, testing,
+                    troubleshooting, maintenance and fiber network support.
                 </p>
-
             </div>
 
-
             <div class="service-card">
-
                 <div class="icon">📷</div>
-
-                <h3>CCTV & Security Surveillance Cameras </h3>
-
+                <h3>CCTV & Security</h3>
                 <p>
-                    CCTV Cameras installation, configuration, maintenance and
-                    remote viewing setup for homes, schools and business premises.
+                    CCTV camera installation, configuration,
+                    maintenance and remote viewing setup for homes,
+                    schools and business premises.
                 </p>
-
             </div>
 
-
             <div class="service-card">
-
                 <div class="icon">🌐</div>
-
                 <h3>Website Development</h3>
-
                 <p>
                     Affordable, mobile-friendly websites for businesses,
                     schools, organizations and individuals.
                 </p>
-
             </div>
 
-
             <div class="service-card">
-
                 <div class="icon">💻</div>
-
                 <h3>ICT Support</h3>
-
                 <p>
-                    Computer Network Setups, Mobile phone software support,Troubleshooting 
-                    and general ICT assistance.
+                    Computer and network setup, smartphone software
+                    support, troubleshooting and general ICT assistance.
                 </p>
-
             </div>
 
-
             <div class="service-card">
-
                 <div class="icon">⚡</div>
-
                 <h3>Electrical Services</h3>
-
                 <p>
-                    Home electrical inspection, basic installation support,
+                    Home electrical inspection, installation services,
                     fault identification and corrective consulting.
                 </p>
-
             </div>
 
         </div>
-
     </div>
-
 </section>
-
 
 <!-- ABOUT -->
 
 <section class="about" id="about">
-
     <div class="container">
-
         <div class="about-grid">
 
             <div>
-
-                <h2>Technology made practical!!</h2>
+                <h2>Technology made practical!</h2>
 
                 <p>
-                    Pro-Pioneers Technologies is focused on providing
-                    affordable and practical technology solutions that
-                    solve real problems.
+                    Pro-Pioneers Technologies focuses on providing
+                    affordable and practical technology solutions
+                    that solve real problems.
                 </p>
 
                 <p>
-                    Whether you need better high speed Wi-Fi at home, Smartphone Softwares Troubleshooting,internet connections 
-                    for your home or business, CCTV Surveillance systems installation, a new website,
-                    fiber support or ICT assistance, we aim to provide
-                    a straightforward reliable solutions.
+                    Whether you need reliable Wi-Fi at home, smartphone
+                    software troubleshooting, internet connectivity,
+                    CCTV installation, a new website, fiber support
+                    or ICT assistance, we aim to provide straightforward
+                    and dependable solutions.
                 </p>
-
             </div>
 
-
             <div>
-
                 <ul class="about-list">
-
                     <li>Affordable technology solutions</li>
                     <li>Home and business support</li>
                     <li>Mobile-friendly websites</li>
                     <li>Network and connectivity solutions</li>
-                    <li>Professional and reliable customer service</li>
-                    <li>Smartphone Troubleshooting services</li>
-
+                    <li>Professional customer service</li>
+                    <li>Smartphone troubleshooting services</li>
                 </ul>
-
             </div>
 
         </div>
-
     </div>
-
 </section>
-
 
 <!-- PROCESS -->
 
 <section class="process">
-
     <div class="container">
 
         <div class="section-title">
-
             <h2>How We Work</h2>
-
             <p>
                 A simple process from your first enquiry
                 to completion of the job.
             </p>
-
         </div>
-
 
         <div class="process-grid">
 
             <div class="process-card">
-
                 <div class="number">1</div>
-
                 <h3>Contact Us</h3>
-
-                <p>
-                    Tell us what you need.
-                </p>
-
+                <p>Tell us what you need.</p>
             </div>
 
-
             <div class="process-card">
-
                 <div class="number">2</div>
-
                 <h3>Assessment</h3>
-
-                <p>
-                    We understand the problem and requirements.
-                </p>
-
+                <p>We understand the problem and requirements.</p>
             </div>
 
-
             <div class="process-card">
-
                 <div class="number">3</div>
-
                 <h3>Solution</h3>
-
-                <p>
-                    We recommend a practical solution.
-                </p>
-
+                <p>We recommend a practical solution.</p>
             </div>
 
-
             <div class="process-card">
-
                 <div class="number">4</div>
-
                 <h3>Complete</h3>
-
-                <p>
-                    We carry out the agreed work.
-                </p>
-
+                <p>We carry out the agreed work.</p>
             </div>
 
         </div>
-
     </div>
-
 </section>
-
 
 <!-- CONTACT -->
 
 <section class="contact" id="contact">
-
     <div class="container">
 
         <div class="section-title">
-
             <h2>Let's Work Together</h2>
-
             <p>
                 Contact us for a quotation or to discuss
                 your technology requirements.
             </p>
-
         </div>
 
-
         <div class="contact-grid">
-
 
             <div class="contact-card">
 
                 <div class="contact-item">
-
-                    <strong>📱 Phone / WhatsApp</strong>
-
-                
-<a class="btn btn-primary"
-   href="https://wa.me/254735505021?text=Hello%20Pro-Pioneer%20Technologies%2C%20I%20would%20like%20to%20make%20an%20enquiry."
-   target="_blank" rel="noopener">
-    Chat on WhatsApp
-</a>
+                    <strong>📞 Phone</strong>
+                    <p>
+                        <a href="tel:+254735505021">
+                            +254 735 505 021
+                        </a>
+                    </p>
+                    <a class="btn btn-primary"
+                       href="tel:+254735505021">
+                        Call Us Now
+                    </a>
                 </div>
 
+                <div class="contact-item">
+                    <strong>💬 WhatsApp</strong>
+                    <p>Chat with us about your technology needs.</p>
+                    <a class="btn btn-primary"
+                       href="https://wa.me/254735505021?text=Hello%20Pro-Pioneers%20Technologies%2C%20I%20would%20like%20to%20make%20an%20enquiry."
+                       target="_blank" rel="noopener">
+                        Chat on WhatsApp
+                    </a>
+                </div>
 
                 <div class="contact-item">
-
                     <strong>📧 Email</strong>
-
-                    <span><a href="mailto:propioneerstechnologies@gmail.com">propioneerstechnologies@gmail.com</a></span>
-
+                    <p>
+                        <a href="mailto:propioneerstechnologies@gmail.com">
+                            propioneerstechnologies@gmail.com
+                        </a>
+                    </p>
                 </div>
 
-
                 <div class="contact-item">
-
                     <strong>📍 Service Area</strong>
-
-<span>Nairobi, Nakuru, Kenya and surrounding areas</span>
+                    <p>Nairobi, Nakuru, Kenya and surrounding areas</p>
                 </div>
 
             </div>
 
-
             <div class="contact-box">
-
                 <h3>Need a technology solution?</h3>
 
                 <p>
-                    Send us a message on WhatsApp and tell us
-                    what you need help with.
+                    Contact us directly by phone or send us a
+                    WhatsApp message. Tell us what you need and
+                    request a quotation.
                 </p>
 
-                <a class="btn btn-primary"
-   href="https://wa.me/254735505021?text=Hello%20Pro-Pioneers%20Technologies%2C%20I%20would%20like%20a%20quotation."
-   target="_blank" rel="noopener">
-    Request a Quote
-                </a>
+                <div class="contact-actions">
+                    <a class="btn btn-primary" href="tel:+254735505021">
+                        📞 Call for Assistance
+                    </a>
 
+                    <a class="btn btn-outline"
+                       href="https://wa.me/254735505021?text=Hello%20Pro-Pioneers%20Technologies%2C%20I%20would%20like%20a%20quotation."
+                       target="_blank" rel="noopener">
+                        Request a Quote
+                    </a>
+                </div>
             </div>
 
         </div>
-
     </div>
-
 </section>
-
 
 <!-- FOOTER -->
 
 <footer>
-
     <strong>Pro-Pioneers Technologies</strong>
     · Technology for Homes & Businesses
 
     <br><br>
 
-    © 2026 Pro-Pioneer Technologies. All rights reserved.
+    Phone:
+    <a href="tel:+254735505021" style="color:white;">
+        +254 735 505 021
+    </a>
 
+    <br><br>
+
+    © 2026 Pro-Pioneers Technologies. All rights reserved.
 </footer>
 
+<!-- FLOATING CALL BUTTON -->
 
-<!-- FLOATING WHATSAPP -->
-
-<a class="whatsapp"
-   href="https://wa.me/254735505021?text=Hello%20Pro-Pioneers%20Technologies%2C%20I%20would%20like%20to%20make%20an%20enquiry."
-   aria-label="Chat on WhatsApp"
-   target="_blank"
-   rel="noopener">
-
-  <svg viewBox="0 0 32 32" width="34" height="34" fill="white" aria-hidden="true">
-    <path d="M16 3C9.4 3 4 8.4 4 15c0 2.3.7 4.5 1.9 6.4L4 29l7.8-1.9c1.8 1 3.9 1.5 6.2 1.5h.1c6.6 0 12-5.4 12-12S22.6 3 16 3zm0 21.8c-2 0-3.9-.5-5.5-1.5l-.4-.2-4.6 1.2 1.2-4.5-.3-.5c-1.1-1.7-1.7-3.7-1.7-5.8 0-6 4.9-10.8 11-10.8 2.9 0 5.7 1.1 7.7 3.2 2.1 2 3.2 4.8 3.2 7.7 0 6-4.9 10.8-10.9 10.8zm6-8.1c-.3-.2-2-1-2.3-1.1-.3-.1-.5-.2-.8.2-.2.3-.9 1.1-1.1 1.3-.2.2-.4.2-.7.1-.3-.2-1.4-.5-2.6-1.6-1-.9-1.6-1.9-1.8-2.3-.2-.3 0-.5.1-.7.1-.1.3-.4.5-.6.2-.2.2-.3.3-.5.1-.2 0-.4 0-.5-.1-.2-.8-1.9-1.1-2.6-.3-.7-.6-.6-.8-.6h-.7c-.2 0-.6.1-.9.4-.3.3-1.2 1.1-1.2 2.7 0 1.6 1.2 3.2 1.4 3.4.2.2 2.4 3.7 5.9 5.2 3.5 1.4 3.5.9 4.2.9.6-.1 2-.8 2.3-1.6.3-.8.3-1.4.2-1.6-.1-.1-.3-.2-.6-.4z"/>
-  </svg>
-
+<a class="floating-contact floating-call"
+   href="tel:+254735505021"
+   aria-label="Call Pro-Pioneers Technologies"
+   title="Call Us">
+    📞
 </a>
 
+<!-- FLOATING WHATSAPP BUTTON -->
 
+<a class="floating-contact whatsapp"
+   href="https://wa.me/254735505021?text=Hello%20Pro-Pioneers%20Technologies%2C%20I%20would%20like%20to%20make%20an%20enquiry."
+   aria-label="Chat with Pro-Pioneers Technologies on WhatsApp"
+   title="Chat on WhatsApp"
+   target="_blank" rel="noopener">
+
+    <svg viewBox="0 0 32 32"
+         width="34" height="34"
+         fill="white" aria-hidden="true">
+        <path d="M16 3C9.4 3 4 8.4 4 15c0 2.3.7 4.5 1.9 6.4L4 29l7.8-1.9c1.8 1 3.9 1.5 6.2 1.5h.1c6.6 0 12-5.4 12-12S22.6 3 16 3zm0 21.8c-2 0-3.9-.5-5.5-1.5l-.4-.2-4.6 1.2 1.2-4.5-.3-.5c-1.1-1.7-1.7-3.7-1.7-5.8 0-6 4.9-10.8 11-10.8 2.9 0 5.7 1.1 7.7 3.2 2.1 2 3.2 4.8 3.2 7.7 0 6-4.9 10.8-10.9 10.8zm6-8.1c-.3-.2-2-1-2.3-1.1-.3-.1-.5-.2-.8.2-.2.3-.9 1.1-1.1 1.3-.2.2-.4.2-.7.1-.3-.2-1.4-.5-2.6-1.6-1-.9-1.6-1.9-1.8-2.3-.2-.3 0-.5.1-.7.1-.1.3-.4.5-.6.2-.2.2-.3.3-.5.1-.2 0-.4 0-.5-.1-.2-.8-1.9-1.1-2.6-.3-.7-.6-.6-.8-.6h-.7c-.2 0-.6.1-.9.4-.3.3-1.2 1.1-1.2 2.7 0 1.6 1.2 3.2 1.4 3.4.2.2 2.4 3.7 5.9 5.2 3.5 1.4 3.5.9 4.2.9.6-.1 2-.8 2.3-1.6.3-.8.3-1.4.2-1.6-.1-.1-.3-.2-.6-.4z"/>
+    </svg>
+
+</a>
 
 </body>
 </html>
